@@ -1,0 +1,173 @@
+@import "tailwindcss" source(none);
+@source "../src";
+@import "tw-animate-css";
+
+@custom-variant dark (&:is(.dark *));
+
+/* ============================================================
+   Divine Chant Companion — "Saffron Sunrise" design system
+   ============================================================ */
+
+@theme inline {
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
+  --radius-2xl: calc(var(--radius) + 8px);
+  --radius-3xl: calc(var(--radius) + 12px);
+
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-destructive-foreground: var(--destructive-foreground);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+
+  /* Divine palette */
+  --color-saffron: var(--saffron);
+  --color-marigold: var(--marigold);
+  --color-cream: var(--cream);
+  --color-maroon: var(--maroon);
+  --color-gold: var(--gold);
+  --color-bead: var(--bead);
+  --color-bead-lit: var(--bead-lit);
+
+  --font-sans: "Inter", system-ui, sans-serif;
+  --font-display: "Cormorant Garamond", "Cormorant", "Georgia", serif;
+
+  --shadow-glow: 0 0 40px -8px var(--marigold);
+  --shadow-divine: 0 18px 50px -20px color-mix(in oklab, var(--maroon) 50%, transparent);
+  --gradient-sunrise: linear-gradient(160deg, oklch(0.98 0.04 80) 0%, oklch(0.92 0.12 70) 45%, oklch(0.78 0.18 50) 100%);
+  --gradient-dusk: linear-gradient(180deg, oklch(0.45 0.16 35) 0%, oklch(0.28 0.10 30) 100%);
+  --gradient-gold: linear-gradient(135deg, oklch(0.85 0.16 80) 0%, oklch(0.72 0.18 65) 100%);
+}
+
+:root {
+  --radius: 1rem;
+
+  /* Saffron Sunrise — light */
+  --background: oklch(0.985 0.018 85);   /* #fff8ec cream */
+  --foreground: oklch(0.28 0.10 35);     /* deep maroon ink */
+
+  --card: oklch(1 0 0);
+  --card-foreground: oklch(0.28 0.10 35);
+  --popover: oklch(1 0 0);
+  --popover-foreground: oklch(0.28 0.10 35);
+
+  --primary: oklch(0.65 0.20 45);        /* #e8773c saffron orange */
+  --primary-foreground: oklch(0.99 0.01 85);
+
+  --secondary: oklch(0.94 0.05 80);      /* warm sand */
+  --secondary-foreground: oklch(0.35 0.12 35);
+
+  --muted: oklch(0.95 0.03 80);
+  --muted-foreground: oklch(0.50 0.06 50);
+
+  --accent: oklch(0.82 0.16 80);         /* #f7c873 marigold */
+  --accent-foreground: oklch(0.28 0.10 35);
+
+  --destructive: oklch(0.55 0.22 25);
+  --destructive-foreground: oklch(0.99 0 0);
+
+  --border: oklch(0.90 0.04 75);
+  --input: oklch(0.92 0.03 80);
+  --ring: oklch(0.65 0.20 45);
+
+  --saffron: oklch(0.65 0.20 45);
+  --marigold: oklch(0.82 0.16 80);
+  --cream: oklch(0.985 0.018 85);
+  --maroon: oklch(0.32 0.12 30);
+  --gold: oklch(0.78 0.15 80);
+  --bead: oklch(0.88 0.04 70);
+  --bead-lit: oklch(0.72 0.18 60);
+
+  --sidebar: oklch(0.98 0.02 80);
+  --sidebar-foreground: oklch(0.28 0.10 35);
+  --sidebar-primary: oklch(0.65 0.20 45);
+  --sidebar-primary-foreground: oklch(0.99 0 0);
+  --sidebar-accent: oklch(0.94 0.05 80);
+  --sidebar-accent-foreground: oklch(0.28 0.10 35);
+  --sidebar-border: oklch(0.90 0.04 75);
+  --sidebar-ring: oklch(0.65 0.20 45);
+}
+
+.dark {
+  --background: oklch(0.18 0.04 35);
+  --foreground: oklch(0.96 0.04 80);
+  --card: oklch(0.23 0.05 35);
+  --card-foreground: oklch(0.96 0.04 80);
+  --popover: oklch(0.23 0.05 35);
+  --popover-foreground: oklch(0.96 0.04 80);
+  --primary: oklch(0.75 0.18 70);
+  --primary-foreground: oklch(0.20 0.08 35);
+  --secondary: oklch(0.28 0.06 35);
+  --secondary-foreground: oklch(0.96 0.04 80);
+  --muted: oklch(0.26 0.05 35);
+  --muted-foreground: oklch(0.72 0.06 70);
+  --accent: oklch(0.65 0.18 70);
+  --accent-foreground: oklch(0.18 0.04 35);
+  --destructive: oklch(0.62 0.22 25);
+  --destructive-foreground: oklch(0.98 0 0);
+  --border: oklch(0.32 0.05 35);
+  --input: oklch(0.30 0.05 35);
+  --ring: oklch(0.75 0.18 70);
+  --bead: oklch(0.32 0.05 35);
+  --bead-lit: oklch(0.80 0.18 70);
+}
+
+@layer base {
+  * { border-color: var(--color-border); }
+  html, body { height: 100%; }
+  body {
+    background: var(--color-background);
+    color: var(--color-foreground);
+    font-family: var(--font-sans);
+    -webkit-font-smoothing: antialiased;
+    overscroll-behavior-y: none;
+  }
+  .font-display { font-family: var(--font-display); letter-spacing: -0.01em; }
+}
+
+@layer utilities {
+  .bg-sunrise { background-image: var(--gradient-sunrise); }
+  .bg-dusk { background-image: var(--gradient-dusk); }
+  .bg-gold { background-image: var(--gradient-gold); }
+  .text-balance { text-wrap: balance; }
+  .shadow-divine { box-shadow: var(--shadow-divine); }
+  .shadow-glow { box-shadow: var(--shadow-glow); }
+
+  @keyframes bead-pop {
+    0% { transform: scale(0.6); filter: brightness(2); }
+    60% { transform: scale(1.25); }
+    100% { transform: scale(1); }
+  }
+  .animate-bead-pop { animation: bead-pop 0.5s ease-out; }
+
+  @keyframes om-pulse {
+    0%, 100% { transform: scale(1); opacity: 1; }
+    50% { transform: scale(1.05); opacity: 0.85; }
+  }
+  .animate-om-pulse { animation: om-pulse 3s ease-in-out infinite; }
+
+  @keyframes listen-ring {
+    0% { box-shadow: 0 0 0 0 color-mix(in oklab, var(--saffron) 60%, transparent); }
+    100% { box-shadow: 0 0 0 24px transparent; }
+  }
+  .animate-listen { animation: listen-ring 1.6s ease-out infinite; }
+}
+
+/* Sanskrit-inspired display font from Google Fonts */
+@import url("https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Inter:wght@400;500;600;700&display=swap");
